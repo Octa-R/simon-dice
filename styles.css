@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 70vh;
+  min-height: 70vh;
+  border-radius: 50%;
+  background-color: rgb(15, 15, 15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "cuadro-0 cuadro-1"
+    "cuadro-2 cuadro-3";
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.container>div {
+  transition: opacity 400ms;
+  opacity: 0.5;
+  width: 90%;
+  height: 90%;
+  border: 15px solid rgb(0, 0, 0);
+}
+
+.container>div:hover {
+  cursor: pointer;
+}
+
+.centro {
+  border-radius: 100%;
+  width: 30vh;
+  height: 30vh;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centro>button {
+  width: 45%;
+  height: 45%;
+  border-radius: 50%;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.5;
+  background: darkred;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.centro>button:hover {
+  cursor: pointer;
+}
+
+.playing {
+  background: rgba(255, 0, 0, 0.692);
+}
+
+.cuadro-0 {
+  border-radius: 100% 0 0 0;
+  justify-self: end;
+  grid-area: cuadro-0;
+  align-self: end;
+  background-color: darkgoldenrod;
+}
+
+.cuadro-1 {
+  border-radius: 0 100% 0 0;
+  grid-area: cuadro-1;
+  align-self: end;
+  background-color: darkred;
+}
+
+.cuadro-2 {
+  border-radius: 0 0 0 100%;
+  justify-self: end;
+  grid-area: cuadro-2;
+  background-color: darkgreen;
+}
+
+.cuadro-3 {
+  border-radius: 0 0 100% 0;
+  grid-area: cuadro-3;
+  background-color: darkblue;
+}
